@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zainab Queen 👑</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ffb6c1,#ffd1dc);
+overflow:hidden;
+}
+
+.page{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+color:white;
+}
+
+.active{
+display:flex;
+}
+
+.card{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+max-width:500px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff1493;
+font-size:18px;
+margin-top:20px;
+cursor:pointer;
+}
+
+input{
+padding:12px;
+border-radius:20px;
+border:none;
+font-size:18px;
+text-align:center;
+}
+
+.big{
+font-size:70px;
+}
+
+h1{
+font-size:40px;
+}
+
+p{
+font-size:22px;
+line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page active" id="lock">
+<div class="card">
+<h1>🧸 Welcome Queen 🧸</h1>
+<p>Enter Secret PIN</p>
+<input type="password" id="pin">
+<br><br>
+<button onclick="unlock()">Unlock ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page1">
+<div class="card">
+<div class="big">💋</div>
+<h1>Zainab 👑</h1>
+<p>
+Tum mujh bohat achi lagti ho.<br>
+Mai tumse bohat pyaar karta hun ❤️
+</p>
+<button onclick="nextPage(2)">Next 🧸</button>
+</div>
+</div>
+
+<div class="page" id="page2">
+<div class="card">
+<div class="big">🧸🌸🧸</div>
+<p>
+Jab tum mujhse baat karti ho to mujhe acha feel hota hai.<br><br>
+Mai tumhari har baat ko importance deta hun.
+</p>
+<button onclick="nextPage(3)">Next 🌹</button>
+</div>
+</div>
+
+<div class="page" id="page3">
+<div class="card">
+<div class="big">🌷🌷🌷</div>
+<p>
+Kash hum dono ka future ek sath hota ❤️<br><br>
+Tum mere liye sab se zyada special ho.
+</p>
+<button onclick="nextPage(4)">Next 💕</button>
+</div>
+</div>
+
+<div class="page" id="page4">
+<div class="card">
+<div class="big">👑🧸👑</div>
+<p>
+Mai 24 hours tumhe sochta hun.<br><br>
+Aur mujhe lagta hai ke tum waqai meri Queen ho 👑❤️
+</p>
+<button onclick="nextPage(5)">Last Page ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page5">
+<div class="card">
+<div class="big">❤️🌹🧸🌹❤️</div>
+<h1>For Zainab 👑</h1>
+<p>
+I Love You ❤️
+</p>
+</div>
+</div>
+
+<script>
+function unlock(){
+let pin=document.getElementById("pin").value;
+if(pin==="2512"){
+document.getElementById("lock").classList.remove("active");
+document.getElementById("page1").classList.add("active");
+}else{
+alert("Wrong PIN ❌");
+}
+}
+
+function nextPage(num){
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+});
+document.getElementById("page"+num).classList.add("active");
+}
+</script>
+
+</body>
+</html>
